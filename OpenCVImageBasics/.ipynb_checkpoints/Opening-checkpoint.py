@@ -1,5 +1,5 @@
 import cv2 as cv
-img = cv.imread('/OpenCVImageBasics/tester1.jpg')
+img = cv.imread('tester1.jpg')
 
 while True:
     cv.imshow("Ezekiel's Puppy", img)
