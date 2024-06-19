@@ -6,7 +6,7 @@ while (True):
     ret, frame = vid.read() # read frame
     cv.imshow('frame', frame) # display frame
 
-    if cv.waitKey(1) & 0xFF == 'q':
+    if cv.waitKey(1) & 0xFF == ord('q'):
         break ## break once esc key is pressed
 
 vid.release() # release cap object
