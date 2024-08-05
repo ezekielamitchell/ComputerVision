@@ -32,6 +32,10 @@ This project demonstrates how to detect specific colors in a video stream using 
 ## Usage
 
 - The script will open a window displaying the video stream with bounding boxes around the detected colors. The default color is set to purple.
+![pass](data/pass.png){: .center-image width="40%"}
+
+<span style="font-size: 70%; color: darkgrey;">_Above is a screenshot of the program running. As shown in the image, some background noise of colors the camera may pick up to be purple will also be boxed in._</span>
+
 - Press `q` to quit the application.
 
 ## Contributing
