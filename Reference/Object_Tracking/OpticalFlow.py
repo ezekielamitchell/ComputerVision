@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(2)
 
 ret, frame1 = cap.read()
 prvsImg = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
