@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from util import get_limits
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(2)
 
 # BGR color values
 orange = [0, 128, 255]
