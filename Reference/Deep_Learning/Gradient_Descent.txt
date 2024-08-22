@@ -1,0 +1,9 @@
+Gradient Descent: an optimzation algorithm for finding the minimum of a function
+    - allows me to figure out the best parameters for minimizing cost 
+        (e.g., best values for weights of neuron inputs)
+    - to find local min, take steps proportional to the negative of the gradient
+
+Backpropagation: Calculates the error contribution of each neuron after a batch of data is processed
+    (calculate error at output and distributes back through the network layers)
+    - relies heavily on the chain rule to go back through the network and calculate these errors
+    - requires a known desired output for each input value (supervised learning)

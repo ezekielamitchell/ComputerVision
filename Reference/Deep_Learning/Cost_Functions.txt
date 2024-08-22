@@ -1,0 +1,33 @@
+Cost Functions in Artificial Neural Networks (ANNs)
+
+* Purpose: Measure how well an ANN is performing by quantifying the difference between its predicted outputs and the actual (desired) outputs.
+
+* Role in Training: Cost functions guide the learning process by providing a feedback signal that the ANN uses to adjust its internal parameters (weights and biases) to minimize the error.
+
+* Common Types:
+    1. Mean Squared Error (MSE): Calculates the average of the squared differences between predicted and actual values. Often used for regression tasks.
+    2. Cross-Entropy Loss: Measures the dissimilarity between the predicted probability distribution and the true distribution. Commonly used for classification tasks.
+    3. Binary Cross-Entropy Loss: A special case of cross-entropy loss used for binary classification problems (two possible classes).
+
+* Key Properties:
+    * Differentiable: Cost functions should be differentiable so that the ANN can compute gradients during backpropagation (the algorithm used to update weights).
+    * Convex: Ideally, cost functions should be convex, meaning they have a single global minimum, making it easier for the ANN to find the optimal solution.
+
+* Impact:
+    * The choice of cost function can significantly affect the training process and the final performance of the ANN.
+    * Different tasks may require different cost functions to achieve the best results. 
+
+---
+
+Quadratic Cost Function: measurement of error
+    C = ((SUM(y-a)^2) / n)
+    a = output = F(z) | z = w*x + b | y = true value
+
+    - larger errors are more prominent due to the squaring
+    - calculation can cause a slowdown in learning speed
+
+Cross Entropy
+    C = (-1/n)*(SUM(y*ln(a) + (1-y)*ln(1-a)))
+
+    - allows for faster learning
+    - the larger the difference, the fast the neuron can learn
