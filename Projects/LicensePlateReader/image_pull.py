@@ -13,7 +13,7 @@ train_data = data_set["train"]
 if not os.path.exists('./data/images'):
     os.makedirs('./data/images')
 
-for i, image in enumerate(train_data[:10]['image']):
+for i, image in enumerate(train_data[:100]['image']):
     image_name = f'image_{i+1}.png'
     image_path = f'./data/images/{image_name}'
     image_np = np.array(image)  # Convert to numpy array
