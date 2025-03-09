@@ -1,35 +1,49 @@
 import cv2
+import pytest
 
-def test_camera():
-    # Open the first camera connected to the computer
+def test_camera_connection():
+    """Test if the camera can be opened and closed properly."""
+    cap = cv2.VideoCapture(0)
+    
+    try:
+        assert cap.isOpened(), "Camera failed to open"
+        
+        # Test if we can read at least one frame
+        ret, frame = cap.read()
+        assert ret, "Failed to read frame from camera"
+        assert frame is not None, "Frame is None"
+        assert frame.size > 0, "Frame is empty"
+        
+    finally:
+        # Ensure camera is released even if test fails
+        cap.release()
+        cv2.destroyAllWindows()
+
+@pytest.mark.manual
+def manual_camera_test():
+    """
+    Manual test for visual inspection of camera feed.
+    Run this separately from automated tests.
+    """
     cap = cv2.VideoCapture(0)
     
     if not cap.isOpened():
-        print("Error: Could not open camera.")
-        return False
+        pytest.fail("Could not open camera.")
 
-    while True:
-        # Capture a frame
-        ret, frame = cap.read()
-        
-        if not ret:
-            print("Error: Could not read frame.")
-            break
+    try:
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                pytest.fail("Could not read frame.")
 
-        # Display the frame in a window
-        cv2.imshow('Camera Test', frame)
-        
-        # Check if a key has been pressed
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-
-    # Release the camera and close the window
-    cap.release()
-    cv2.destroyAllWindows()
-    return True
+            cv2.imshow('Camera Test', frame)
+            
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+    
+    finally:
+        cap.release()
+        cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    if test_camera():
-        print("Camera test passed.")
-    else:
-        print("Camera test failed.")
+    manual_camera_test()
