@@ -1,3 +1,5 @@
+import os
+os.environ["QT_QPA_PLATFORM"] = "xcb"
 import cv2
 import pytest
 
@@ -20,7 +22,7 @@ def test_camera_connection():
         cv2.destroyAllWindows()
 
 @pytest.mark.manual
-def manual_camera_test():
+def test_camera_manual():
     """
     Manual test for visual inspection of camera feed.
     Run this separately from automated tests.
@@ -46,4 +48,4 @@ def manual_camera_test():
         cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    manual_camera_test()
+    test_camera_manual()

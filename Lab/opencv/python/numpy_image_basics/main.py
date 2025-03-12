@@ -16,4 +16,3 @@ else:
     # Wait for a key press to close the window and exit
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-
