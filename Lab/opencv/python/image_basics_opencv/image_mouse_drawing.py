@@ -24,9 +24,9 @@ def draw_rectangle(event, x, y, flags, param):
         cv2.rectangle(image, (ix,iy), (x,y), (0,255,255), -1)
 
 # SHOW IMAGE
-image = np.zeros((512,512,3))
-cv2.namedWindow(winname='my_drawing')
-cv2.setMouseCallback('my_drawing', draw_rectangle)
+image = np.zeros((512,512,3)) ## create blank image
+cv2.namedWindow(winname='my_drawing') ## name required for connecting image to callback function
+cv2.setMouseCallback('my_drawing', draw_rectangle) ## connects the image to the callback function
 
 while True:
     cv2.imshow('my_drawing', image)

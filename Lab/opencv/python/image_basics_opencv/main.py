@@ -10,8 +10,10 @@ def generate_image():
         print('Error: image not found')
     else:
         cv.cvtColor(img, cv.COLOR_BGR2RGB) # BGR -> RGB color mapping
-        cv.imshow('Image', img) # show image
-        cv.waitKey(0) # away action
+        while True:
+            cv.imshow('Image', img) # show image
+            if cv.waitKey(1) & 0xFF==27: # close img using esc key
+                break
         cv.destroyAllWindows() # destroy image windows
 
 if __name__ == '__main__':
