@@ -1,36 +1,39 @@
-## IMPORTS
+# This program utilizes mouse callback to draw on images
+
+# IMPORTS
 import cv2
 import numpy as np
 
 # VARIABLES
-## True when mouse button DOWN, False while mouse button UP
+## true when left button down
 drawing = False
-ix = -1 
-iy = -1
-
+ix, iy = -1, -1
 
 # FUNCTION
-def draw_rectangle(event, x, y, flags, param):
+def draw_rectangle(event, x, y, flags, params):
     global ix, iy, drawing
 
     if event == cv2.EVENT_LBUTTONDOWN:
         drawing = True
-        ix,iy = x,y # catch where mouse is located
+        ix, iy = x,y
     elif event == cv2.EVENT_MOUSEMOVE:
-        if drawing == True:
-            cv2.rectangle(image, (ix,iy), (x,y), (0,255,255), -1)
+        if drawing:
+            cv2.rectangle(img,(ix,iy),(x,y), (256,256,256), -1)
     elif event == cv2.EVENT_LBUTTONUP:
         drawing = False
-        cv2.rectangle(image, (ix,iy), (x,y), (0,255,255), -1)
+        cv2.rectangle(img, (ix,iy), (x, y), (256,256,256), -1)
 
 # SHOW IMAGE
-image = np.zeros((512,512,3)) ## create blank image
-cv2.namedWindow(winname='my_drawing') ## name required for connecting image to callback function
-cv2.setMouseCallback('my_drawing', draw_rectangle) ## connects the image to the callback function
+
+# BLACK
+img = np.zeros(shape=(512,512,3))
+winname = "mouse_drawing"
+cv2.namedWindow(winname=winname)
+cv2.setMouseCallback(winname, draw_rectangle)
 
 while True:
-    cv2.imshow('my_drawing', image)
-    if cv2.waitKey(1) & 0xFF==27:
+    cv2.imshow(winname, img)
+    if cv2.waitKey(1) & 0xFF==27: # esc key press
         break
 
 cv2.destroyAllWindows()
