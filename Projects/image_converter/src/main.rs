@@ -13,7 +13,7 @@
 /// ! - Simple, intuitive command-line interface
 
 use clap::Parser;
-use image::{GenericImageView, ImageError};
+use image::ImageError;
 use std::path::PathBuf;
 
 /// A simple program to convert images to grayscale
