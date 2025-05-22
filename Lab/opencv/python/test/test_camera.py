@@ -38,7 +38,8 @@ def test_camera_manual():
             if not ret:
                 pytest.fail("Could not read frame.")
 
-            cv2.imshow('Camera Test', frame)
+            frame_rev = cv2.flip(frame, 2)
+            cv2.imshow('Camera Test', frame_rev)
             
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
