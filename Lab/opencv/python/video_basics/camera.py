@@ -2,7 +2,7 @@ import cv2
 import time
 import platform
 
-capture = cv2.VideoCapture(2) # grab default camera
+capture = cv2.VideoCapture(0) # grab default camera
 
 width = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)) # grab frame width
 height = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)) # grab frame height
