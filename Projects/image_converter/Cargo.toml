@@ -1,9 +1,0 @@
-[package]
-name = "image_converter"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-image = "0.25.6" # Image processing library
-clap = { version = "4.1", features=["derive"] } # Command line argument parsing
-anyhow = "1.0" # Error handling

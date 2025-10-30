@@ -57,9 +57,9 @@ nbformat==5.10.4
 nest-asyncio==1.6.0
 notebook_shim==0.2.4
 numpy==2.2.3
-opencv-python==4.11.0.86
+opencv-python==4.12.0.88
 overrides==7.7.0
-packaging==24.2
+packaging==25
 pandas==2.2.3
 pandocfilters==1.5.1
 parso==0.8.4
