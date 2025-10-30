@@ -2,7 +2,7 @@
 .ipynb_checkpoints/
 
 # Ignore Python virtual environment
-venv/
+.venv/
 
 # Ignore Python bytecode
 __pycache__/
@@ -12,3 +12,6 @@ __pycache__/
 
 # Ignore Python cache
 *.pyc
+
+# Ignore Claude
+*.claude/
