@@ -12,6 +12,3 @@ __pycache__/
 
 # Ignore Python cache
 *.pyc
-
-# Ignore CV-python
-CV_Python/
