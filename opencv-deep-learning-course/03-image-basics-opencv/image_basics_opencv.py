@@ -14,7 +14,35 @@ Topics covered:
 - Image Basics Assessment Solutions
 """
 
-import cv2
+import cv2 as cv
+from time import sleep
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Your code here
+# Load image from file path
+img = cv.imread('../data/00-puppy.jpg')
+
+print('image located')
+sleep(1)
+print('loading....')
+sleep(1)
+
+# Note: OpenCV loads images in BGR format by default
+# Use cv.cvtColor(img, cv.COLOR_BGR2RGB) to convert for matplotlib
+# fixed_img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+
+# Single display method (waits for any key)
+# cv.imshow('frame-0', img)
+# cv.waitKey(0)
+
+# Display image in window until 'q' is pressed
+while True:
+    cv.imshow('frame_00', img)
+    # waitKey(0) waits indefinitely for key press
+    # 0xFF masks to get last 8 bits for key comparison
+    if cv.waitKey(0) & 0xFF == ord('q'):
+        print('break')
+        break
+
+# Close all OpenCV windows
+cv.destroyAllWindows()
