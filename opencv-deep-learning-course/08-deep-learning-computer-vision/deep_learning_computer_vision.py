@@ -29,4 +29,4 @@ import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 
-# Your code here
+print(tf.__version__)
